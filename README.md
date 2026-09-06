@@ -1,4 +1,3 @@
-<img width="665" height="497" alt="evidencemed-04-sql-error-disclosure png" src="https://github.com/user-attachments/assets/b8918160-4450-46e0-8e09-04591e23314e" />
 <div align="center">
 
 # 🏥 Mediroza General Hospital
