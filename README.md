@@ -1,3 +1,4 @@
+<img width="665" height="497" alt="evidencemed-04-sql-error-disclosure png" src="https://github.com/user-attachments/assets/b8918160-4450-46e0-8e09-04591e23314e" />
 <div align="center">
 
 # 🏥 Mediroza General Hospital
@@ -70,6 +71,9 @@ A controlled **black-box penetration test** was conducted against Mediroza Gener
 > **Bottom line:** A username-field SQL injection bypassed patient login entirely, exposing three encrypted lab reports. All three were cracked offline with Hashcat. Separately, a forgotten backup at `/old/` leaked internal staff salary and shareholder records to the open internet — no authentication required.
 
 ---
+<img width="669" height="500" alt="evidencerecon-robots-txt png" src="https://github.com/user-attachments/assets/65400519-8297-4aae-a6ad-e31feb4b25db" />
+<img width="665" height="497" alt="evidencemed-04-sql-error-disclosure png" src="https://github.com/user-attachments/assets/fe2142a3-ab4a-4cc8-a925-d430408728a4" />
+
 
 ## 🔍 Scope & Methodology
 
@@ -91,6 +95,9 @@ Phase 6  Further Exposure Analysis → /old/ backup discovery → HR & sharehold
 ```
 
 ---
+<img width="1600" height="821" alt="evidencem3-database-structure png" src="https://github.com/user-attachments/assets/0d9c2a30-e2e2-43a8-9553-cae0f5559eaf" />
+<img width="669" height="500" alt="sqli-error-evidence png" src="https://github.com/user-attachments/assets/2a700177-ecb8-4f1b-ada0-c6d2d2656283" />
+
 
 ## 🛠 Tools Used
 
@@ -122,6 +129,9 @@ Disallow: /old/
 `/old/` turned out to contain a fully exposed database backup — a reminder that `robots.txt` is a *suggestion to crawlers*, not an access control.
 
 ---
+<img width="1600" height="874" alt="paitent data" src="https://github.com/user-attachments/assets/3b1d68ec-e466-4413-835e-ae780a2b0a76" />
+<img width="669" height="480" alt="hashes" src="https://github.com/user-attachments/assets/945fb6f5-e5e6-4ed3-87dc-2e70ae109735" />
+
 
 ## 🐛 Findings
 
@@ -137,6 +147,10 @@ The login form processed user input in a way that allowed SQL syntax manipulatio
 SELECT * FROM patients
 WHERE username = '$username' AND password = '$password';
 ```
+<img width="667" height="489" alt="evidencemed-01-sql-injection-error pn" src="https://github.com/user-attachments/assets/9ca5a89b-35e7-48b5-80ef-e5b0eb005297" />
+<img width="1600" height="876" alt="atient-portal-report-access png" src="https://github.com/user-attachments/assets/ffb98c67-c9d1-4258-aedc-eb99691b6d2a" />
+<img width="1600" height="874" alt="pass found" src="https://github.com/user-attachments/assets/6277bd45-9506-40ef-873a-3669d37a51f3" />
+
 
 **Remediation:** parameterized queries, secure password hashing (Argon2id/bcrypt), generic auth errors, rate limiting/lockout, suspicious-activity logging.
 
